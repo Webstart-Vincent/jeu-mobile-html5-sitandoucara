@@ -1,0 +1,12 @@
+body {
+  display: grid;
+  align-items: center;
+  min-width: 100vh;
+}
+
+canvas {
+  width: 60%;
+  aspect-ratio: 480/360;
+  border: solid black;
+  margin: auto;
+}
