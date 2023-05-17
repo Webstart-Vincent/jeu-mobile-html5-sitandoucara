@@ -68,8 +68,8 @@ canvas {
   background: none;
 }
 .ab-buttons > button.pressed {
-  background-color: var(--light-blue-color);
-  box-shadow: inset 0px 0px 16px var(--middle-purple-color);
+  background-color: black;
+  box-shadow: inset 0px 0px 16px black;
 }
 .a-btn {
   place-self: start start;
