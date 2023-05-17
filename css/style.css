@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
   background-color: black;
   color: white !important;
-  font-family: bloodcrow, monospace !important;
+  font-family: bloodcrow, monospace;
   background: url(../assets/img/background.png) no-repeat;
   background-size: cover;
   display: grid;
@@ -19,7 +19,7 @@ body {
 }
 
 canvas {
-  width: 60%;
+  width: 100%;
   aspect-ratio: 480/360;
   border: solid black;
   margin: auto;
@@ -39,10 +39,22 @@ canvas {
   align-items: center;
   /* width: 100%; */
 }
-canvas {
-  width: 100%;
-  grid-area: 1 / 2 / 2 / 3;
+
+.canvas_item {
+  display: grid;
 }
+
+.canvas_item img,
+.canvas_item canvas {
+  grid-area: 1 / 1 /2/2;
+}
+
+.canvas_item img {
+  z-index: 2;
+  width: 25%;
+  padding: 10px;
+}
+
 .ab-buttons {
   display: grid;
   width: 120px;
@@ -88,7 +100,7 @@ canvas {
     color: black;
     position: fixed;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     padding: 5vw;
   }
 }
