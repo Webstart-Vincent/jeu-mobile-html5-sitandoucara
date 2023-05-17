@@ -1,4 +1,4 @@
-import { Game } from "./game.js";
+import { Game } from "../game.js";
 
 export class BananaSkin {
   sourceX = 0;
@@ -8,7 +8,6 @@ export class BananaSkin {
 
   fps = 1000 / 12; // cadance - 12 frame par seconde
   framesLenght = 2; //nombre de frames  dans la ligne de la spritesheet
-  frameIndex = 0;
 
   /**
    * Description
@@ -31,17 +30,20 @@ export class BananaSkin {
     this.reset();
   }
 
+  render = (timeStamp, deltaTime) => {
+    this.draw();
+    this.update(timeStamp, deltaTime);
+  };
+
   draw() {
     this.ctx.drawImage(
       this.image,
       this.sourceX,
       this.sourceY,
-      this.framewidth, //cadrage dans la source - fichier.png
-      this.frameheight, //cadrage dans la source
       this.destinationX,
       this.destinationY,
-      this.framewidth, //dimension dans la destination - canvas
-      this.frameheight //dimension dans la destination
+      this.frameWidth, //dimension dans la destination - canvas
+      this.frameHeight //dimension dans la destination
     );
   }
 
@@ -53,7 +55,7 @@ export class BananaSkin {
 
   update(timeStamp, deltaTime) {
     const frameIndex = Math.floor(timeStamp / this.fps) % this.framesLenght;
-    this.sourceX = frameIndex * this.framewidth;
+    this.sourceX = frameIndex * this.frameWidth;
 
     //casi-meme code background
     this.destinationX -= (deltaTime * this.speed) / 1000;
