@@ -1,4 +1,6 @@
 import { Background } from "./background.js";
+/*import { BananaSkin } from "./banana_skin.js";*/
+import { InputHandler } from "./input-handler.js";
 import { Player } from "./player.js";
 export class Game {
   score = 0;
@@ -10,9 +12,12 @@ export class Game {
     this.canvas.width = 480;
     this.canvas.height = 360;
     this.ctx = this.canvas.getContext("2d");
+    this.inputHandler = new InputHandler();
     this.background = new Background(this.ctx);
 
-    this.player = new Player(this.ctx);
+    this.player = new Player(this);
+
+    /*this.banaSkinPool = new BananaSkin();*/
     this.lastTimeStamp = 0;
     this.animate(0);
   }
