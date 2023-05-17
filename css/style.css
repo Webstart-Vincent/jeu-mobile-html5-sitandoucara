@@ -1,19 +1,6 @@
 @font-face {
-  font-family: vcr;
+  font-family: bloodcrow;
   src: url("../assets/blood_crow/bloodcrow.ttf");
-}
-
-:root {
-  --light-purple-color: #b057ef;
-  --middle-purple-color: #823fbd;
-  --dark-purple-color: #5028a3;
-  --dark-blue-color: #1d1a7d;
-  --light-blue-color: #61ddff;
-  --light-yellow-color: #f5f490;
-  --light-green-color: #5dd37b;
-}
-* {
-  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -79,12 +66,13 @@ canvas {
 }
 
 .desktop-instructions {
+  text-align: center;
   margin-top: 16px;
   width: 60%;
   max-width: 800px;
   align-self: start;
-  font-family: bloodcrow, monospace !important;
-  /*display: none;*/
+  font-size: 30px;
+  display: block;
 }
 
 .portrait-warning {
@@ -102,6 +90,12 @@ canvas {
     inset: 0;
     z-index: 2;
     padding: 5vw;
-    font-family: bloodcrow, monospace !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-instructions {
+    font-size: 20px;
+    display: none;
   }
 }
