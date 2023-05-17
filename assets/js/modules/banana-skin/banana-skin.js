@@ -22,7 +22,7 @@ export class BananaSkin {
 
     const { canvas } = game;
     this.canvasWidth = canvas.width;
-    this.canvasHeigth = canvas.heigth;
+    this.canvasHeight = canvas.height;
 
     this.frameWidth = 135;
     this.frameHeight = 122;
@@ -36,14 +36,17 @@ export class BananaSkin {
   };
 
   draw() {
+    console.log(this.destinationY);
     this.ctx.drawImage(
       this.image,
       this.sourceX,
       this.sourceY,
+      this.frameWidth, //dimension dans la destination - canvas
+      this.frameHeight,
       this.destinationX,
       this.destinationY,
       this.frameWidth, //dimension dans la destination - canvas
-      this.frameHeight //dimension dans la destination
+      this.frameHeight
     );
   }
 
