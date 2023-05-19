@@ -68,7 +68,7 @@ export class BananaSkin {
   reset = () => {
     this.isActive = true;
     this.destinationX = this.canvasWidth;
-    this.destinationY = Math.random() * (this.canvasHeigth - this.frameHeight);
+    this.destinationY = Math.random() * (this.canvasHeight - this.frameHeight);
     this.speed = Math.random() * 50 + 100;
   };
 }
