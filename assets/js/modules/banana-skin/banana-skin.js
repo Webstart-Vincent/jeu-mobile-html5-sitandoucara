@@ -6,7 +6,7 @@ export class BananaSkin {
   destinationX = 25;
   destinationY = 100;
 
-  fps = 1000 / 12; // cadance - 12 frame par seconde
+  fps = 1000 / 2; // cadance - 12 frame par seconde
   framesLenght = 2; //nombre de frames  dans la ligne de la spritesheet
 
   /**
@@ -24,8 +24,8 @@ export class BananaSkin {
     this.canvasWidth = canvas.width;
     this.canvasHeight = canvas.height;
 
-    this.frameWidth = 135;
-    this.frameHeight = 122;
+    this.frameWidth = 412;
+    this.frameHeight = 309;
 
     this.reset();
   }

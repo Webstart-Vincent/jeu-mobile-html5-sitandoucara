@@ -21,7 +21,7 @@ body {
 canvas {
   width: 100%;
   aspect-ratio: 480/360;
-  border: solid black;
+  border: 6.5px solid #414141;
   margin: auto;
   border-radius: 20px;
 }
@@ -34,8 +34,8 @@ canvas {
 
 .game {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  justify-items: center;
+  grid-template-columns: auto;
+  /*justify-items: center;*/
   align-items: center;
   /* width: 100%; */
 }
@@ -55,8 +55,14 @@ canvas {
   padding: 10px;
 }
 
+.ab-buttons,
+.attack_img {
+  display: none;
+}
+
 .ab-buttons {
   display: grid;
+  display: none;
   width: 120px;
   /*height: 100px;*/
   /*place-self: end start;*/
@@ -80,7 +86,7 @@ canvas {
 .desktop-instructions {
   text-align: center;
   margin-top: 16px;
-  width: 60%;
+  /*width: 60%;*/
   max-width: 800px;
   align-self: start;
   font-size: 30px;
@@ -109,5 +115,19 @@ canvas {
   .desktop-instructions {
     font-size: 20px;
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .ab-buttons,
+  .attack_img {
+    display: block;
+  }
+
+  .game {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    /* width: 100%; */
   }
 }

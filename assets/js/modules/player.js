@@ -7,8 +7,8 @@ export class Player {
   destinationX = 25;
   destinationY = 100;
 
-  fps = 1000 / 12; // cadance - 12 frame par seconde
-  framesLenght = 2; //nombre de frames  dans la ligne de la spritesheet
+  fps = 1000 / 5; // cadance - 12 frame par seconde
+  framesLenght = 6; //nombre de frames  dans la ligne de la spritesheet
   frameIndex = 0;
   speed = 3; //300px/s
 
@@ -22,8 +22,8 @@ export class Player {
     this.image.src = "./assets/img/player-spritesheet.png";
     this.ctx = game.ctx;
     this.inputKeys = game.inputHandler.keys;
-    this.framewidth = 222;
-    this.frameheight = 247;
+    this.frameWidth = 304;
+    this.frameHeight = 228;
 
     const { canvas } = game;
     this.maxDestinationX = canvas.width - this.frameWidth;
@@ -35,12 +35,12 @@ export class Player {
       this.image,
       this.sourceX,
       this.sourceY,
-      this.framewidth, //cadrage dans la source - fichier.png
-      this.frameheight, //cadrage dans la source
+      this.frameWidth, //cadrage dans la source - fichier.png
+      this.frameHeight, //cadrage dans la source
       this.destinationX,
       this.destinationY,
-      this.framewidth, //dimension dans la destination - canvas
-      this.frameheight //dimension dans la destination
+      this.frameWidth, //dimension dans la destination - canvas
+      this.frameHeight //dimension dans la destination
     );
   }
   /**
@@ -50,7 +50,8 @@ export class Player {
 
   update(timeStamp) {
     const frameIndex = Math.floor(timeStamp / this.fps) % this.framesLenght;
-    this.sourceX = frameIndex * this.framewidth;
+    this.sourceX = frameIndex * this.frameWidth;
+
     //console.log(this.inputKeys);
     if (this.inputKeys.has(Key.ArrowUp)) this.destinationY -= this.speed;
     if (this.inputKeys.has(Key.ArrowRight)) this.destinationX += this.speed;
